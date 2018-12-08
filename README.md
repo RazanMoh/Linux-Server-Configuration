@@ -11,7 +11,6 @@ Application URL: http://ec2-18-184-151-245.eu-central-1.compute.amazonaws.com|
 
 ## Get Started
 
-#### ***Server Setup:***
 #### ***Step 1: Start a new Ubuntu Linux server instance on Amazon Lightsail***
 
 1.	Login into Amazon Lightsail using an Amazon Web Services account.
@@ -22,10 +21,23 @@ Application URL: http://ec2-18-184-151-245.eu-central-1.compute.amazonaws.com|
 6.	Click the Create button to create the instance
 7.	Wait for the instance to start up
 8.	Login to the instance via command line
-
 ```bash
-ssh -i ~/.ssh/ LightsailDefault.pem ubuntu@[YOUR.PUBLIC.IP.ADDRESS]
+ssh -i ~/.ssh/LightsailDefault.pem ubuntu@[YOUR.PUBLIC.IP.ADDRESS]
 ```
+9. Download Private Key below
+10. Move the private key file into the folder
+```bash
+~/Downloads/LightsailDefault.pem ~/.ssh/
+```
+11. Open the terminal and type in
+```bash
+chmod 600 ~/.ssh/
+```
+12. In your terminal, type in
+```bash
+ssh -i ~/.ssh/LightsailDefault.pem root@[YOUR.PUBLIC.IP.ADDRESS]
+```
+
 #### ***Step 2: Install updates/upgrades and fix timezone***
 1.	Login to virtual machine (VM)
 2.	Update all currently installed packages:
